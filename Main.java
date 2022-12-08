@@ -2,20 +2,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int k, toplam = 0, m = 0, ort;
+        int n, total = 0;
         Scanner mec = new Scanner(System.in);
 
-        System.out.println("Sayı giriniz: ");
-        k = mec.nextInt();
-
-        for (int i = 1; i <= k; i++) {
-            if (i % 12 == 0) {
-                System.out.println(i);
-                toplam = i + toplam;
-                m++;
+        do {
+            System.out.print("Sayı giriniz: ");
+            n = mec.nextInt();
+            if (n % 4 == 0) {  //4'ün katları zaten 2'ninde katıdır.
+                total += n;
             }
-        }
-        ort = toplam / m;
-        System.out.println("Ortalama: " + ort);
+
+        } while (n % 2 == 0);
+        System.out.println("Toplam: " + total);
     }
 }
